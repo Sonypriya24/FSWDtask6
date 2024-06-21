@@ -1,0 +1,46 @@
+/* src/styles/ImageItem.css */
+.image-item {
+  position: relative;
+  margin: 10px;
+  border: 3px solid #ccc; /* Grey border */
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s; /* Smooth transition */
+  flex: 1 1 calc(25% - 20px); /* Responsive width, four items per row */
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+  max-width: calc(25% - 20px); /* Ensure max width for larger screens */
+  background-color: #f0f0f0; /* Subtle grey background */
+}
+
+.image-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures images scale properly */
+  display: block;
+}
+
+.image-item:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  border-color: #3AAFA9; /* Change border color on hover */
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .image-item {
+    flex: 1 1 calc(33.333% - 20px); /* Three items per row */
+    max-width: calc(33.333% - 20px);
+  }
+}
+
+@media (max-width: 800px) {
+  .image-item {
+    flex: 1 1 calc(50% - 20px); /* Two items per row */
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 500px) {
+  .image-item {
+    flex: 1 1 calc(100% - 20px); /* One item per row */
+    max-width: calc(100% - 20px);
+  }
+}
